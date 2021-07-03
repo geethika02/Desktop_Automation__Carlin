@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import QTimer,QTime,Qt,QDate
 from PyQt5.uic import loadUiType
 import sample
+import psutil
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -75,7 +76,7 @@ class Ui_MainWindow(object):
         self.date.setScaledContents(True)
         self.date.setObjectName("date")
         self.datee = QtWidgets.QLabel(self.centralwidget)
-        self.datee.setGeometry(QtCore.QRect(1220, 310, 381, 71))
+        self.datee.setGeometry(QtCore.QRect(1205, 310, 381, 71))
         self.datee.setStyleSheet("background-color:Transparent;\n"
                                  "color:aqua;\n"
                                  "font: 15pt \"Berlin Sans FB\";")
@@ -142,15 +143,14 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Carlin"))
         self.loading.setText(_translate("MainWindow", "Loading . . ."))
-
         dt = QDate.currentDate()
-        dt1 = dt.toString("dd   MMMM ")
+        dt1 = dt.toString("dd   MMMM  yyyy")
         self.datee.setText(_translate("MainWindow", dt1))
         dd = dt.toString("dddd")
         self.dayee.setText(_translate("MainWindow", dd))
-        dt = QDate.currentDate()
-        dt1 = dt.toString("yyyy")
-        self.timee.setText(_translate("MainWindow", dt1))
+        dt = psutil.sensors_battery()
+        z = str(dt.percent)
+        self.timee.setText(_translate("MainWindow", z + ' %'))
         t=sample.ert()
         self.reg.setText(_translate("MainWindow", t))
         r = sample.wolfram("Temperature of visakhapatnam")
@@ -166,3 +166,4 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
