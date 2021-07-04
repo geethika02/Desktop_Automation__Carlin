@@ -535,7 +535,7 @@ def googlemaps(place):
 
 
 def whatsapp():
-    web.open("https://web.whatsapp.com/")
+    os.startfile("")#Enter whatsapp file location here
     sleep(10)
     speak("Tell the contact name")
     name = listen()
