@@ -33,7 +33,7 @@ from tkinter import *
 engine = pyttsx3.init()
 en_voice_id = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0"
 engine.setProperty('voice', en_voice_id)
-client = wolframalpha.Client("AWY6TG-7AA2Q6PP2V")
+client = wolframalpha.Client("")#Enter your wolframalpha Api key by creating an account
 
 
 def speak(audio):
