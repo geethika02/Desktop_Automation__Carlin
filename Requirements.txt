@@ -1,5 +1,5 @@
 Note: Create an account in wolframalpha and use your own api key in sample.py line 36
-      Enter the whatsapp location in sample.py file on line 532
+      Enter the whatsapp location in sample.py file on line 538
 
 pip install pyttsx3
 pip install opencv-python
