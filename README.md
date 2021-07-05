@@ -51,4 +51,4 @@ Follow the below steps to run the Carlin program:
 - To exit the project, say "Sleep" or "you need a break".
 
 The project will again get started by a command "Wake up" or "hey carlin".
-For input commands, refer the sample.py file. 
+For input commands and password, refer the sample.py file. 
